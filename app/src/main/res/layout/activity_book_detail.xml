@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    tools:context=".BookDetail">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:layout_height="wrap_content">
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:foregroundGravity="center"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/book_cover_page"
+            android:contentDescription="Book Cover Page"
+            android:src="@drawable/imagenotfound"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:id="@+id/rating_layout"
+            android:layout_below="@id/book_cover_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/rating_label"
+                android:text="Rating"
+                android:layout_weight="3"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                tools:text="Rating"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/publisher_laout"
+            android:layout_below="@id/rating_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/publisher_label"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="Publisher"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/publisher"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                tools:text="Publisher"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_below="@id/publisher_laout"
+            android:id="@+id/favorites_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="Favorites"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:gravity="center_vertical"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="60dp" />
+            <ImageView
+                android:onClick="toggleImage"
+                android:id="@+id/favorite_image"
+                android:contentDescription="Favorites Symbol"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_favorite_border_black_24dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:text="Description"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_below="@id/favorites_layout"
+            android:id="@+id/description_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/description"
+            android:layout_below="@id/description_label"
+            android:textStyle="bold"
+            tools:text="Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_below="@id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_id" />
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>
